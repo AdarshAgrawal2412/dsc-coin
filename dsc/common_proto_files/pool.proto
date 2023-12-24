@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package="adarsh.dsc";
+
+service user
+{
+    rpc send(sendRequest) return(transactionReply);
+    rpc transaction(transactionReply) return(transactionReply);
+    rpc transactions(transactionReply) return(transactionReply);
+}
+
+message sendRequest
+{
+    string sender_public_address = 1;
+    string recepient_public_address = 2;
+    double value = 3;
+    int timestamp = 4;
+    string transaction_ID = 5;
+    string signature = 6;
+}
+
+message transactionReply
+{
+
+}
